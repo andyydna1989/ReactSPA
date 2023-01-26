@@ -16,7 +16,7 @@ const Contact = () =>{
 
         switch (input){
             case 'Name':
-                console.log(testVar);
+                
                 if (value.length > 0){
                     return true;
                 }
@@ -44,7 +44,7 @@ const Contact = () =>{
             name: 'Name',
             label: 'Name',
             type: 'text',
-            valid: true,
+            valid: 0,
             invalidMsg: 'Please input a name'
 
         },
@@ -53,7 +53,7 @@ const Contact = () =>{
             name: 'Email',
             label: 'Email Address',
             type: 'email',
-            valid: true,
+            valid: 0,
             invalidMsg: 'Please check your email'
 
         }
@@ -62,7 +62,7 @@ const Contact = () =>{
             name: 'Description',
             label: 'Your question/request',
             type: 'text',
-            valid: true,
+            valid: 0,
             invalidMsg: 'Please add a description of your query'
 
         }
