@@ -9,7 +9,7 @@ return(
         <h1 className="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left"> Andy's Awesome Winter Deals</h1>
         <p className="max-w-sm text-center text-gray-500 md:text-left"> Inspired by the Australian Open? Get new kit ready for Spring!</p>
         <div className="flex justify-center md:justify-start">
-        <a href='XXX' className=' align-middle p-3 px-6  max-h-24 text-white bg-red-600 rounded-full baseline hover:bg-red-300 ml-8 text-center shrink-2 grow-0'> Full Catalogue</a>
+        <a href='XXX' className=' align-middle p-3 px-6  max-h-24 text-white bg-red-600 rounded-full baseline hover:bg-red-300 mx-auto text-center shrink-2 grow-0'> Full Catalogue</a>
         
         </div>
         </div>

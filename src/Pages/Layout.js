@@ -21,7 +21,7 @@ const Layout = () => {
 <Link to='/Contact' className='hover:text-gray-600'>Contact</Link>
 
             </div>
-        <a href='XXX' className='hidden md:block p-3 px-6 pt-2 text-white bg-red-600 rounded-full baseline hover:bg-red-300 ml-8 text-center'> Specials</a>
+        <Link to='/Specials' className='hidden md:block p-3 px-6 pt-2 text-white bg-red-600 rounded-full baseline hover:bg-red-300 ml-8 text-center'> Specials</Link>
         </div>
         
         </nav>
