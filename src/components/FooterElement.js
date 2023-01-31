@@ -1,5 +1,5 @@
 
-import { useCallback, useReducer, useEffect } from "react";
+import { useCallback, useReducer } from "react";
 
 
 const statsReducer=(state, action) =>{
