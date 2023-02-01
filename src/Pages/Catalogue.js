@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react';
 import Card from '../components/Card'
 
+//this component takes props from the App component in the form of data to populate cards with stock info. Since adding the Redux store some manipulation is required in the
+// initialise function to format the object into a useable array. This component also manages the user sort options with the applyFilter() function.
 
 const Catalogue =(props)=>{
 const [renderController, setRenderController] = useState(true);
+const [sortedProps, setSortedProps] = useState([]);
 
-const [sortedProps, setSortedProps] = useState(props.inputArray);
-
-const initialFilter=useEffect(()=>{
+const initialise = useEffect(()=>{
+    setSortedProps([]);
+    for (let key of props.inputArray){
+        setSortedProps((prevState)=>{return ([...prevState, {title:key.title, price:key.price, text:key.text, image:key.image}])});
+    }
+    sortedProps.pop();
     applyFilter('price H');
-    // necessary when navigating to the same component between '/Catalogue' and '/Specials'.
-    setSortedProps(props.inputArray)
-}, [props])
+    setRenderController(!renderController)
+},[props])
 
     const selectHandler=(e)=>{
         applyFilter(e.target.value);
@@ -29,13 +34,17 @@ const initialFilter=useEffect(()=>{
             case 'manufacturer':
                 sortedProps.sort((a,b) => (a.title > b.title) ? 1 : (a.title < b.title) ? -1 : 0);
                 break;      
+                default: console.log('unrecognised sorting attempt.')
         }
     }
 
+   
 
     return (
         <>
+        <p className={` w-1/3 text-center mx-auto mt-8 text-5xl text-red-500 font-extrabold  ${!props.specials ? 'hidden' : 'block'}`}> RED HOT DEALS!</p>
     <select onChange = {selectHandler} className='block w-1/3 p-2 bg-black text-white text-center mx-auto mt-8 border-solid border-black border-2 rounded-xl' name='filter'>
+        <option value=''>Please Select a Filter</option>
         <option value='price H'>Price High-Low</option>
         <option value='price L'>Price Low-High</option>
         <option value='manufacturer'>Manufacturer</option>

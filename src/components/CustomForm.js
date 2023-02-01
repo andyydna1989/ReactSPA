@@ -93,6 +93,7 @@ const CustomForm = props => {
             key={index}
             className=" m-3 w-11/12 flex flex-row align-middle justify-between min-h-1/3 shadow-sm"
           >
+          
             <label
               htmlFor={input.name}
               className={
@@ -101,7 +102,7 @@ const CustomForm = props => {
             >
               {input.valid !== 1 ? input.label : input.invalidMsg}{' '}
             </label>
-
+        
             <input
               data-testid="inputBox"
               type={input.type}

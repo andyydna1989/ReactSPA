@@ -1,11 +1,13 @@
 
 import { useCallback, useReducer } from "react";
 
+// this element produces the stats at the bottom of the page, but the backend will not function unless a local server runs the server.js file in the backend folder.
+// I've used useReducer to break up the useState monotony!
 
 const statsReducer=(state, action) =>{
 
-        console.log("stats retrieved!");
-        return( {racketTypes: action.rackets, sales: action.sales, countries:action.countries});
+    console.log("stats retrieved!");
+    return( {racketTypes: action.rackets, sales: action.sales, countries:action.countries});
     
 }
 
@@ -31,24 +33,25 @@ const getStats = useCallback(async ()=>{
                 countries: data.countries
             })
         }
-
     }
     catch(error){
         console.log(error);
     }
   
 }, []);
+
 if (!keyStats.racketTypes){
 getStats();
+
 }
 
     return(
 <div className="container flex-col mx-auto mt-5">
 <div className="flex flex-col md:flex-row align-middle justify-between ">
-    <h2 className="m-1 p-2 bg-red-500 text-white w-1/3 text-center rounded-full text-xl md:text-2xl " > Racket Types Stocked <span className=" md:hidden ">: {keyStats.racketTypes}</span></h2>
+    <h2 className="mx-auto  my-2p-2 bg-red-500 text-white w-1/3 text-center rounded-full text-xl md:text-2xl " > Racket Types Stocked <span className=" md:hidden ">: {keyStats.racketTypes}</span></h2>
 
-    <h2 className="m-1 p-2 bg-red-500 text-white w-1/3 text-center rounded-full text-xl md:text-2xl " > Sales to date <span className=" md:hidden ">: {keyStats.sales}</span></h2>
-    <h2 className="m-1 p-2 bg-red-500 text-white w-1/3 text-center rounded-full text-xl md:text-2xl " > Countries shipped to <span className=" md:hidden ">: {keyStats.countries}</span></h2>
+    <h2 className="mx-auto my-2 p-2 bg-red-500 text-white w-1/3 text-center rounded-full text-xl md:text-2xl " > Sales to date <span className=" md:hidden ">: {keyStats.sales}</span></h2>
+    <h2 className="mx-auto my-2 p-2 bg-red-500 text-white w-1/3 text-center rounded-full text-xl md:text-2xl " > Countries shipped to <span className=" md:hidden ">: {keyStats.countries}</span></h2>
 </div>
 <div className="flex  flex-row align-middle justify-between mt-3 mb-3">
 <p className="hidden md:block m-1 w-1/3 text-center align-middle text-xl md:text-2xl font-bold mt-1"> {keyStats.racketTypes}</p>

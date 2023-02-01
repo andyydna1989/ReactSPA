@@ -8,7 +8,7 @@ const Card = (props)=>{
 <p className="font-bold text-md mx-3 mt-6 mb-1 md:text-xl"> {props.title}</p>
     {/* card image container*/}
     <div className='min-h-10 shrink-1 mx-3'>
-        <img src={props.image} ></img>
+        <img src={props.image} alt='A tennis product in our catalogue' width='95%' height='60%'></img>
     </div>
     
     <div className="mt-2 p-2 font-inherit text-sm md:text-lg ">£{props.price}</div>

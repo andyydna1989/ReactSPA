@@ -1,18 +1,19 @@
 
+// another static section with responsive styling.
 
 const TextSection = () => {
 
     return (
         <section>
 
-        <div className="flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
-            <div className="flex flex-col space-y-12 md:w-1/2">
+        <div className="flex flex-col px-4 justify-center mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row md:justify-start ">
+            <div className="flex flex-col mx-auto space-y-12 md:w-1/2">
                 <h2 className="max-w-md text-4xl font-bold text-center md:text-left"> Why use Andy's Tennis Store?</h2>
                 <p className="max-w-sm text-center text-gray-400 md:text-left"> Here's just some of the reasons you'll love shopping for your next tennis purchase with us...</p>
             </div>
             <div className="flex flex-col space-y-8 md:w:1/2">
 
-            <div className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+            <div className="flex flex-col mx-auto space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
                     <h2 className="rounded-l-full bg-red-400 md:bg-transparent">
                     </h2>
                     <div className="flex items-center space-x-2">
@@ -31,7 +32,7 @@ const TextSection = () => {
                 </div>
 
 {/*second section*/}
-<div className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+<div className="flex flex-col space-y-3 mx-auto md:space-y-0 md:space-x-6 md:flex-row">
                     <h2 className="rounded-l-full bg-red-400 md:bg-transparent">
                     </h2>
                     <div className="flex items-center space-x-2">
@@ -51,7 +52,7 @@ const TextSection = () => {
 
  {/*3rd section*/}
 
-                <div className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+                <div className="flex flex-col space-y-3 mx-auto md:space-y-0 md:space-x-6 md:flex-row">
                     <h2 className="rounded-l-full bg-red-400 md:bg-transparent">
                     </h2>
                     <div className="flex items-center space-x-2">

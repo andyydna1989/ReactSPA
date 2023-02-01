@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import racketImg from '../Assets/Racket1.jpg'
 
+
+// a simple hero component, responsive to screen size.
 const Hero =()=>{
 
 return(

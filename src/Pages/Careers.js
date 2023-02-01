@@ -1,5 +1,8 @@
 import worker from '../Assets/worker.jpg';
 
+
+//a simple static html page styled with Tailwind CSS. In reality you would open an email client with the link anchor, but in this case it just returns the user to the homepage.
+
 function Careers () {
   return (
     <section>

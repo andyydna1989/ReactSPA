@@ -1,6 +1,10 @@
 import {useState} from 'react';
 import CustomForm from '../components/CustomForm';
 
+
+// this component makes use of the customForm element to generate a simple 'contact us' form. This would have been far simpler with a bespoke
+// form, but the intent is to have a reusable template that could be deployed in other parts of an app.
+
 const Contact = () => {
   const submitHandler = valuesArray => {
     //This would usually be send to the backend with the Fetch API, but there is no need for it on this demo site.
@@ -17,27 +21,27 @@ const Contact = () => {
         } else {
           return false;
         }
-        break;
+        
       case 'Email':
         if (value.includes ('@') && value.includes ('.')) {
           return true;
         } else {
           return false;
         }
-        break;
+        
       case 'Description':
         if (value.length > 0) {
           return true;
         } else {
           return false;
         }
-        break;
+     
       default:
         return false;
     }
   };
 
-  const [inputsArray, setInputsArray] = useState ([
+  const [inputsArray] = useState ([
     {
       name: 'Name',
       label: 'Name',
@@ -61,7 +65,7 @@ const Contact = () => {
       invalidMsg: 'Please add a description of your query',
     },
   ]);
-  
+
   return (
     <div className=" mt-8 w-2/3 flex flex-col h-full shadow-md m-auto">
       <CustomForm
